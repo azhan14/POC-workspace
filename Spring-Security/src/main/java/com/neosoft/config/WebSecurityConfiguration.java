@@ -39,13 +39,16 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter{
 					oauth2login.loginPage("/oauth2/authorization/api-client-oidc"))
 			.oauth2Client(Customizer.withDefaults());
 		
-//		http.cors().and().csrf().disable()
-//		.authorizeHttpRequests()
+//		http.authorizeHttpRequests()
 //		.antMatchers("/")
 //		.permitAll()
 //		.antMatchers("/home")
 //		.hasAuthority("USER")
 //		.antMatchers("/admin")
-//		.hasAuthority("ADMIN");
+//		.hasAuthority("ADMIN")
+//		.anyRequest()
+//		.authenticated()
+//		.and()
+//		.httpBasic();
 	}
 }
