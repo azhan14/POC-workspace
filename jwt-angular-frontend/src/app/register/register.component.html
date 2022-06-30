@@ -1,0 +1,102 @@
+<div class="container mt-5 col-md-6 offset-md-3">
+    <div class="card" style="padding: 20px;">
+        <!-- #registerForm = "ngForm" -->
+        <form [formGroup] = "registerForm"  (ngSubmit)="register()"> 
+            <div class="form-group">
+                <label> Name: </label>
+                <input type="text" ngModel name="name" id="name"
+                placeholder="Enter your name"  formControlName = "name"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rname.invalid && rname.touched">
+                    <span *ngIf = "rname.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Surame: </label>
+                <input type="text" ngModel name="surname" id="surname"
+                placeholder="Enter your surname"  formControlName = "surname"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rsurname.invalid && rsurname.touched">
+                    <span *ngIf = "rsurname.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Username: </label>
+                <input type="text" ngModel name="username" id="username"
+                placeholder="Enter your username"  formControlName = "username"
+                class="form-control mb-3">
+            </div>  
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rusername.invalid && rusername.touched">
+                    <span *ngIf = "rusername.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Password: </label>
+                <input type="password" ngModel name="password" id="password"
+                placeholder="Enter your password" formControlName = "password"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rpassword.invalid && rpassword.touched">
+                    <span *ngIf = "rpassword.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Pincode: </label>
+                <input type="number" ngModel name="pincode" id="pincode"
+                placeholder="Enter your pincode" formControlName = "pincode"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rpincode.invalid && rpincode.touched">
+                    <span *ngIf = "rpincode.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> DOB: </label>
+                <input type="date" ngModel name="dob" id="dob"
+                placeholder="Enter your dob" formControlName = "dob"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rdob.invalid && rdob.touched">
+                    <span *ngIf = "rdob.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Joining Date: </label>
+                <input type="date" ngModel name="joiningDate" id="joiningDate"
+                placeholder="Enter your joiningDate" formControlName = "joiningDate"
+                class="form-control mb-3">
+            </div>
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rjoiningDate.invalid && rjoiningDate.touched">
+                    <span *ngIf = "rjoiningDate.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <input type="submit" value="register"  
+            class="btn btn-outline-primary form-control rounded-0">
+
+            <ng-template #errRequired>This Field is Required.</ng-template>
+        </form>
+    </div>
+</div>

@@ -49,12 +49,26 @@ public class UserService {
 		roleRepository.save(userRole);
 		
 		User adminUser = new User();
+		adminUser.setId(1L);
 		adminUser.setUsername("admin123");
 		adminUser.setPassword(getEncodedPassword("admin@pass"));
 		Set<Role> adminRoles = new HashSet<Role>();
 		adminRoles.add(adminRole);
 		adminUser.setRoles(adminRoles);
 		userRepository.save(adminUser);
+	}
+
+	public User getUserById(Long id) {
+		return userRepository.findById(id).get();
+	}
+
+	public User saveUser(User user) {
+		Role role = roleRepository.findById("user").get();
+		Set<Role> roles = new HashSet<Role>();
+		roles.add(role);
+		user.setRoles(roles);
+		user.setPassword(getEncodedPassword(user.getPassword()));
+		return userRepository.save(user);
 	}
 
 }

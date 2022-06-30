@@ -1,0 +1,57 @@
+<div class="container mt-5">
+    <div class="card text-center" style="padding: 20px; color: blue">
+        <div class="topDiv">
+            <h1>User Profile</h1>
+            <button class="btn btn-primary" (click)="updateProfile()">Edit</button>
+        </div>
+        <div>
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Full Name</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ user.name }} {{ user.surname }}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Username</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ user.username }}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Date of Birth</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ user.dob }}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Joining Date</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ user.joiningDate}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Pincode</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{ user.pincode }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>    
+</div>

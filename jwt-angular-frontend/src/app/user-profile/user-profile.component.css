@@ -1,0 +1,8 @@
+.topDiv h1{
+    display: inline-block;
+    width: 100%;
+}
+
+.topDiv button{
+    float: right;
+}

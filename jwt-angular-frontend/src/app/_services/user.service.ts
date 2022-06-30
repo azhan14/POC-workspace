@@ -17,7 +17,7 @@ export class UserService {
   constructor(private httpClient: HttpClient,
     private userAuthService: UserAuthService) { }
 
-  public login(loginData) {
+  public login(loginData: any) {
     return this.httpClient.post(this.apiPath + "/authenticate", loginData, { headers: this.requestHeader });
   }
 
@@ -29,7 +29,19 @@ export class UserService {
     return this.httpClient.get(this.apiPath + "/forAdmin", {responseType: 'text'});
   }
 
-  public roleMatch(allowedRoles): boolean {
+  public register(registerData: any) {
+    return this.httpClient.post(this.apiPath + "/registeruser", registerData,  { headers: this.requestHeader });
+  }
+
+  public getUserById(id: string){
+    return this.httpClient.get(this.apiPath + "/user/" + id, {responseType : 'json'})
+  }
+
+  public updateUser(id: string, updateData: any) {
+    return this.httpClient.put(this.apiPath + "/user/" + id, updateData)
+  }
+
+  public roleMatch(allowedRoles:any): boolean {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
     if (userRoles != null && userRoles) {
