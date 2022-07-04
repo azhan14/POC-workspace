@@ -45,7 +45,8 @@ public class User {
 	private int deleted = 0;
 	private int locked = 0;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.REMOVE,
+			CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
 	@JoinTable(name = "USER_ROLE",
 		joinColumns = {
 				@JoinColumn(name = "USER_ID")

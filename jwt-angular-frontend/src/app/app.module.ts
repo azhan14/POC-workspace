@@ -18,6 +18,10 @@ import { UserService } from './_services/user.service';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { ViewUserComponent } from './view-user/view-user.component';
+import { AdminUpdateUserComponent } from './admin-update-user/admin-update-user.component';
+import { LockedUserComponent } from './locked-user/locked-user.component';
+import { SearchPipe } from './_pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     ForbiddenComponent,
     RegisterComponent,
     UserProfileComponent,
-    UserUpdateComponent
+    UserUpdateComponent,
+    ViewUserComponent,
+    AdminUpdateUserComponent,
+    LockedUserComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,45 @@
+
+<h1>Users</h1>
+<h6>Sort By: </h6>
+<select [(ngModel)] = "selectedValue" (change) = "sort()">
+    <option value = "dob">Date Of Birth</option>
+    <option value = "joiningdate">Joining Date</option>
+</select>
+<h6>Search By: </h6>
+<select [(ngModel)] = "searchOption" (change) = "onSelectSearch()">
+    <option value="name">By Name</option>
+    <option value="surname">By Surname</option>
+    <option value="pincode">By Pincode</option>
+</select>
+<input type="text" [(ngModel)]="searchText" (change) = "onSearchText()">
+
+<h6>Angular Search: </h6>
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search">
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Pincode</th>
+        <th scope="col">D.O.B</th>
+        <th scope="col">Joining Date</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor = "let user of users | search: searchTerm">
+            <tr *ngIf = "user.locked === 0">
+                <td>{{ user.name }} {{ user.surname }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.pincode }}</td>
+                <td>{{ user.dob }}</td>
+                <td>{{ user.joiningDate}}</td>
+                <td>
+                    <button class="btn btn-info" (click)="updateUser(user.id)">Update</button>
+                    <button class="btn btn-danger" (click)="deleteUser(user.id)" style="margin-left: 5px;">Delete</button>
+                    <button class="btn btn-danger" (click)="lockUser(user.id)" style="margin-left: 5px;">Lock</button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+    </table>

@@ -41,6 +41,42 @@ export class UserService {
     return this.httpClient.put(this.apiPath + "/user/" + id, updateData)
   }
 
+  public getAllUsers() {
+    return this.httpClient.get(this.apiPath + "/users");
+  }
+
+  public getAllDeletedUsers() {
+    return this.httpClient.get(this.apiPath + "/users/delete");
+  }
+
+  public softDeleteUser(id: string) {
+    return this.httpClient.put(this.apiPath + "/user/soft/delete/"+id, "");
+  }
+
+  public hardDeleteUser(id: string) {
+    return this.httpClient.delete(this.apiPath + "/user/hard/delete/"+id);
+  }
+
+  public lockUser(id: string) {
+    return this.httpClient.put(this.apiPath + "/user/lock/" + id, "");
+  }
+
+  public unlockUser(id: string) {
+    return this.httpClient.put(this.apiPath + "/user/unlock/" + id, "");
+  }
+
+  public getUsersSortedByDob() {
+    return this.httpClient.get(this.apiPath + "/users/sort/dob");
+  }
+
+  public getUsersSortedByJoiningDate() {
+    return this.httpClient.get(this.apiPath + "/users/sort/joiningdate");
+  }
+
+  public userSearchBy(path: string) {
+    return this.httpClient.get(this.apiPath + "/user/" + path);
+  }
+
   public roleMatch(allowedRoles:any): boolean {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();

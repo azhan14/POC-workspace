@@ -1,0 +1,88 @@
+<div class="container mt-5 col-md-6 offset-md-3">
+    <div class="card" style="padding: 20px;">
+        <!-- #updateForm = "ngForm"  -->
+        <form [formGroup] = "updateForm"(ngSubmit)="update()"> 
+            <label> Name: </label>
+            <input type="text" ngModel name="name" id="name"
+            [(ngModel)] = "user.name" formControlName = "name"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rname.invalid && rname.touched">
+                    <span *ngIf = "rname.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> Surame: </label>
+            <input type="text" ngModel name="surname" id="surname"
+            [(ngModel)] = "user.surname" formControlName = "surname"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rsurname.invalid && rsurname.touched">
+                    <span *ngIf = "rsurname.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> Username: </label>
+            <input type="text" ngModel name="username" id="username"
+            [(ngModel)] = "user.username" formControlName = "username"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rusername.invalid && rusername.touched">
+                    <span *ngIf = "rusername.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> Password: </label>
+            <input type="password" ngModel name="password" id="password"
+            [(ngModel)] = "user.password"  formControlName = "password"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rpassword.invalid && rpassword.touched">
+                    <span *ngIf = "rpassword.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> Pincode: </label>
+            <input type="text" ngModel name="pincode" id="pincode"
+            [(ngModel)] = "user.pincode"  formControlName = "pincode"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rpincode.invalid && rpincode.touched">
+                    <span *ngIf = "rpincode.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> DOB: </label>
+            <input type="date" ngModel name="dob" id="dob"
+            [(ngModel)] = "user.dob" formControlName = "dob"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rdob.invalid && rdob.touched">
+                    <span *ngIf = "rdob.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <label> Joining Date: </label>
+            <input type="date" ngModel name="joiningDate" id="joiningDate"
+            [(ngModel)] = "user.joiningDate" formControlName = "joiningDate"
+            class="form-control mb-3">
+
+            <div class="form-group">
+                <div ngClass = "myColor" *ngIf = "rjoiningDate.invalid && rjoiningDate.touched">
+                    <span *ngIf = "rjoiningDate.errors?.['required'] then errRequired"> </span>
+                </div>
+            </div>
+
+            <input type="submit" value="Update"  
+            class="btn btn-outline-primary form-control rounded-0">
+
+            <ng-template #errRequired>This Field is Required.</ng-template>
+        </form>
+    </div>
+</div>

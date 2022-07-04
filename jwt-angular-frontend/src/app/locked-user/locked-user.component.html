@@ -1,0 +1,29 @@
+
+<h1>Locked Users</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Pincode</th>
+        <th scope="col">D.O.B</th>
+        <th scope="col">Joining Date</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor = "let user of users">
+            <tr *ngIf = "user.locked === 1">
+                <td>{{ user.name }} {{ user.surname }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.pincode }}</td>
+                <td>{{ user.dob }}</td>
+                <td>{{ user.joiningDate}}</td>
+                <td>
+                    <button class="btn btn-success" (click)="unlockUser(user.id)" style="margin-left: 5px;">UnLock</button>
+                </td>
+            
+            </tr>
+        </ng-container>
+    </tbody>
+    </table>
