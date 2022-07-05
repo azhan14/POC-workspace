@@ -22,6 +22,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { AdminUpdateUserComponent } from './admin-update-user/admin-update-user.component';
 import { LockedUserComponent } from './locked-user/locked-user.component';
 import { SearchPipe } from './_pipe/search.pipe';
+import { DeletedUserComponent } from './deleted-user/deleted-user.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SearchPipe } from './_pipe/search.pipe';
     ViewUserComponent,
     AdminUpdateUserComponent,
     LockedUserComponent,
-    SearchPipe
+    SearchPipe,
+    DeletedUserComponent
   ],
   imports: [
     BrowserModule,

@@ -41,4 +41,9 @@ public interface UserRepository extends CrudRepository<User, Long>{
 	@Modifying
 	@Query("UPDATE User u SET u.locked = 0 WHERE u.id = ?1")
 	void unlockUser(Long id);
+	
+	@Transactional
+	@Modifying
+	@Query("DELETE FROM User u WHERE u.id = ?1")
+	void deleteUserById(Long id);
 }

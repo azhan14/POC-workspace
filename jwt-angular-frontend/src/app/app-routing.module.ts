@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminUpdateUserComponent } from './admin-update-user/admin-update-user.component';
 import { AdminComponent } from './admin/admin.component';
+import { DeletedUserComponent } from './deleted-user/deleted-user.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { HomeComponent } from './home/home.component';
 import { LockedUserComponent } from './locked-user/locked-user.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "view-users", component: ViewUserComponent , canActivate: [AuthGuard], data: {roles: ['admin']}},
   { path: "update/:id", component: AdminUpdateUserComponent , canActivate: [AuthGuard], data: {roles: ['admin']}},
   { path: "locked-users", component: LockedUserComponent , canActivate: [AuthGuard], data: {roles: ['admin']}},
+  { path: "deleted-users", component: DeletedUserComponent, canActivate: [AuthGuard], data: {roles: ['admin']}},
   { path: "user", component: UserComponent, canActivate: [AuthGuard], data: {roles: ['user']}},
   { path: "user-profile", component: UserProfileComponent, canActivate: [AuthGuard], data: {roles: ['user']}},
   { path: "user-update", component: UserUpdateComponent, canActivate: [AuthGuard], data: {roles: ['user']}},

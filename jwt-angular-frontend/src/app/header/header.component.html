@@ -35,7 +35,12 @@
 
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="/locked-users"
-                    *ngIf = "showAdminDashboard()">Locked User</a>
+                    *ngIf = "showAdminDashboard()">Locked Users</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/deleted-users"
+                    *ngIf = "showAdminDashboard()">Deleted Users</a>
                 </li>
 
             </ul>

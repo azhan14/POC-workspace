@@ -1,0 +1,26 @@
+
+<h1>Deleted Users</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Pincode</th>
+        <th scope="col">D.O.B</th>
+        <th scope="col">Joining Date</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor = "let user of users">
+                <td>{{ user.name }} {{ user.surname }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.pincode }}</td>
+                <td>{{ user.dob }}</td>
+                <td>{{ user.joiningDate}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteUser(user.id)" style="margin-left: 5px;">Delete</button>
+                </td>
+            </tr>
+    </tbody>
+    </table>
